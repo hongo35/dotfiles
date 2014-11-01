@@ -13,13 +13,8 @@ endif
 
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-endwise'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'Shougo/vimproc', {
-\'build': {
-\  'mac': 'make -f make_mac.mak',
-\  },
-\}
+NeoBundle 'scrooloose/nerdtree'
 
 " vim-quickrun設定
 let g:quickrun_config = {
@@ -31,20 +26,6 @@ let g:quickrun_config = {
 \   "hook/time/enable": 1
 \  }
 \}
-
-" unite.vim設定
-" 入力モードで開始する
-let g:unite_enable_start_insert=1
-" uniteを開くとき,垂直分割で開く
-let g:unite_enable_split_vertically=1
-" ファイルを開くとき,ウィンドウを縦に分割して開く
-au FileType unite nnoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-au FileType unite inoremap <silent> <buffer> <expr> <C-l> unite#do_action('vsplit')
-
-nnoremap    [unite]   <Nop>
-nmap    <Leader>f [unite]
-
-nnoremap <silent> [unite]f :<C-u>Unite<Space>file<CR>
 
 " filetype plugin indent on
 " filetype indent on
