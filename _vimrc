@@ -1,5 +1,3 @@
-set number
-set cursorline
 " vi互換モードを利用しない
 set nocompatible
 filetype off
@@ -15,6 +13,16 @@ NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'christoomey/vim-tmux-navigator'
+
+" vim-tmux-navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <c-h> :TmuxNavigateLeft<cr>
+nnoremap <silent> <c-j> :TmuxNavigateDown<cr>
+nnoremap <silent> <c-k> :TmuxNavigateUp<cr>
+nnoremap <silent> <c-l> :TmuxNavigateRight<cr>
+nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
 
 " vim-quickrun設定
 let g:quickrun_config = {
@@ -61,3 +69,6 @@ autocmd BufNewFile,BufRead *.js set filetype=javascript
 autocmd FileType ruby setl expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent
 autocmd FileType php setl tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType javascript setl tabstop=4 shiftwidth=4 softtabstop=4
+
+" スクロール速度改善
+set lazyredraw
