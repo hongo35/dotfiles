@@ -53,11 +53,16 @@ set tabstop=4
 " set softtabstop=4
 " set shiftwidth=4
 
+set number
 set autoindent
 set nostartofline
 set listchars=tab:▸\ ,eol:¬
 set list
 set noerrorbells
+
+" ハイライト
+set hlsearch
+nnoremap<ESC><ESC>:nohlsearch<CR>
 
 let g:hybrid_use_iTerm_colors = 1
 colorscheme hybrid
